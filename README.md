@@ -233,7 +233,7 @@
       아래 버튼을 눌러 인증샷을 보내주세요! ❤️
     </p>
     
-    <a href="mailto:sungjun@example.com?subject=[인증] 발렌타인 데이트권 미션 성공!&body=성준님! 미션 성공을 축하드립니다. 캡쳐한 이미지를 첨부해서 답장해주세요!" class="btn mail-btn">
+    <a href="mailto:juehee0110@gmail.com?subject=[인증] 발렌타인 데이트권 미션 성공!&body=성준님! 미션 성공을 축하드립니다. 캡쳐한 이미지를 첨부해서 답장해주세요!" class="btn mail-btn">
       인증샷 보내기
     </a>
     <br>
