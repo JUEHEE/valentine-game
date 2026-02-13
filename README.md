@@ -174,11 +174,10 @@ function launchHearts() {
     document.body.appendChild(heart);
 
     setTimeout(() => {
-      heart.remove();
-    }, 3000);
-  }
+     .heart {
+  position: fixed;
+  font-size: 20px;
+  animation: fall 3s linear forwards;
+  z-index: 9999;   /* 추가 */
+  pointer-events: none; /* 추가 */
 }
-</script>
-
-</body>
-</html>
