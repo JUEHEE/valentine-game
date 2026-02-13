@@ -167,17 +167,15 @@ function closeModal() {
 function launchHearts() {
   for (let i = 0; i < 40; i++) {
     const heart = document.createElement("div");
-    heart.classList.add("heart");
+    heart.className = "heart";
     heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "-20px";
+    heart.style.fontSize = (Math.random() * 30 + 20) + "px";
     document.body.appendChild(heart);
 
     setTimeout(() => {
-     .heart {
-  position: fixed;
-  font-size: 20px;
-  animation: fall 3s linear forwards;
-  z-index: 9999;   /* 추가 */
-  pointer-events: none; /* 추가 */
+      heart.remove();
+    }, 3000);
+  }
 }
