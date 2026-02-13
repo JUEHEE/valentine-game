@@ -1,16 +1,17 @@
-# valentine-game
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chocolate Catch Game</title>
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f3a6b3;
   text-align: center;
+  overflow-x: hidden;
 }
 
 header {
@@ -25,15 +26,6 @@ header {
   padding: 60px 20px;
 }
 
-.hero h1 {
-  font-size: 40px;
-  color: #7a0f14;
-}
-
-.hero p {
-  font-size: 18px;
-}
-
 button {
   padding: 12px 25px;
   font-size: 16px;
@@ -42,11 +34,6 @@ button {
   background: #7a0f14;
   color: white;
   cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background: #a0161c;
 }
 
 #game-section {
@@ -96,16 +83,24 @@ button:hover {
   background: white;
   padding: 40px;
   border-radius: 20px;
-  text-align: center;
+}
+
+.heart {
+  position: fixed;
+  font-size: 20px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  Happy Valentine's Day 💗
-</header>
+<header>Happy Valentine's Day 💗</header>
 
 <div class="hero">
   <h1>🍫 Chocolate Catch Game 🍫</h1>
@@ -154,6 +149,7 @@ function spawnChocolate() {
     if (score >= 10) {
       clearInterval(gameInterval);
       document.getElementById("reward-modal").style.display = "flex";
+      launchHearts();
     }
   };
 
@@ -167,10 +163,22 @@ function spawnChocolate() {
 function closeModal() {
   document.getElementById("reward-modal").style.display = "none";
 }
+
+function launchHearts() {
+  for (let i = 0; i < 40; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 3000);
+  }
+}
 </script>
-first upload
-
-
 
 </body>
 </html>
